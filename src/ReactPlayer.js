@@ -8,6 +8,26 @@ import FilePlayer from './players/FilePlayer'
 import Streamable from './players/Streamable'
 import Vidme from './players/Vidme'
 
+export const UrlParser = {
+  SoundCloud: {
+    canPlay(url) {
+      return SoundCloud.canPlay(url)
+    },
+    getId(url) {
+      return url
+    }
+  },
+  Youtube: {
+    canPlay(url) {
+      return Youtube.canPlay(url)
+    },
+    getId(url) {
+      return Youtube.getId(url)
+    }
+  }
+}
+
+
 export default class ReactPlayer extends Component {
   static displayName = 'ReactPlayer'
   static propTypes = propTypes
